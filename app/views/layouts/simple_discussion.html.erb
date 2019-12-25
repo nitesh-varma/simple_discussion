@@ -1,7 +1,14 @@
-<div class="row col-md-12">
-  <h1>
-    <%= t('community') %>
-  </h1>
+<div class="row" style="padding: 5px">
+  <div class="col-sm-8">
+    <h1>
+      <%= t('community') %>
+    </h1>
+  </div>
+  <div class="col-sm-4">
+    <div class='pull-right'>
+      <%= link_to 'Back To Home', '/' %>
+    </div>
+  </div>
 </div>
 
 <div class="row simple_discussion">
@@ -77,7 +84,8 @@
 
         <%= link_to simple_discussion.forum_thread_notifications_path(@forum_thread), method: :post, class: "btn btn-secondary btn-sm btn-block mb-2" do %>
           <% if @forum_thread.subscribed? current_user %>
-            <%= icon "bell-slash" %> t('.unsubscribe')
+            <%= icon "bell-slash" %>
+            <%= t('.unsubscribe') %>
           <% else %>
             <%= icon "bell" %>
             <%= t('.suscribe') %>
